@@ -17,7 +17,7 @@ $(error "Python not found in PATH, please install it.")
 endif
 
 # These set the information text in the nds file
-GAME_CODE     := KWRA
+GAME_CODE     := KMEW
 
 include $(DEVKITARM)/ds_rules
 
@@ -178,7 +178,7 @@ $(OUTPUT).nds: $(OUTPUT).elf $(NITRO_FILES) $(GAME_ICON)
 
 $(OUTPUT).dsi: $(OUTPUT).elf $(NITRO_FILES) $(GAME_ICON)
 	$(SILENTCMD)ndstool -c $@ -9 $(OUTPUT).elf $(_ADDFILES) \
-		-g $(GAME_CODE) 00 "WORDLE DS" -z 80040000 -u 00030004
+		-g $(GAME_CODE) 00 "WORDLE DS 2" -z 80040000 -u 00030004
 	$(SILENTCMD)$(PYTHON) ../animatedbannerpatch.py $@ ../banner.bin
 	@echo built ... $(notdir $@)
 
